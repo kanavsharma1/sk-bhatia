@@ -6,12 +6,13 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(1),
-    textAlign: "center",
+    padding: theme.spacing(3),
+    textAlign: "left",
     color: theme.palette.text.secondary,
   },
   description: {
     fontSize: "1.4em",
+    textJustify: "left",
   },
   descHeading: {
     textAlign: "left",
@@ -25,13 +26,13 @@ export const DescriptionSection = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid container spacing={0}>
         <Grid>
           <Paper className={classes.paper}>
             <Typography variant="h3" className={classes.descHeading}>
               Welcome to SK Bhatia & Associates
             </Typography>
-            <Typography className={classes.description}>
+            <Typography xs={12} className={classes.description}>
               "<b>Sohbat Bhatia & Associates,</b> is a firm of Chartered
               Accountants based Mumbai, India established in the year, 2009. We
               have been rendering the services in line of Tax Matters, Auditing
