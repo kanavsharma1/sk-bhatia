@@ -23,10 +23,6 @@ const useStyles = makeStyles({
 
 export const Services = () => {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-  const [services, setServices] = useState([
-    { service_id: "001", service_name: "GST" },
-  ]);
   return (
     <Grid container>
       <JumbotronBar banner={BannerServiceImage} />
