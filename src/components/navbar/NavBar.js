@@ -44,7 +44,7 @@ export const NavBar = () => {
         </Link>
         {menuItems.map((item, index) => (
           <Link key={index} className={classes.navLink} to={item}>
-            <Button size="large" key={index}>
+            <Button size="medium" key={index}>
               <Typography variant="h6" className={classes.buttonText}>
                 {item}
               </Typography>
