@@ -1,57 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import { Button, makeStyles } from "@material-ui/core";
+import "./navbar.css";
+import { DrawerToggleButton } from "./DrawerToggleButton";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-    textDecoration: "none",
-    color: "#f5f5f5",
-  },
-  navLink: {
-    textDecoration: "none",
-    color: "#f5f5f5",
-    padding: 20,
-  },
-  buttonText: {
-    color: "#f5f5f5",
-    fontWeight: 600,
-  },
-}));
-
-export const NavBar = () => {
-  const classes = useStyles();
-  const [menuItems] = React.useState(["Home", "About", "Services", "Sectors"]);
-
+export const NavBar = (props) => {
   return (
-    <AppBar position="sticky">
-      <Toolbar>
-        <Link className={classes.title} to="/">
-          <Typography variant="h4" className={classes.title}>
-            SK BHATIA
-          </Typography>
+    <nav className="Toolbar" position="fixed">
+      <DrawerToggleButton onClickHandler={props.drawerClickHandler} />
+      <div className="Logo-container">
+        <Link className="Logo" to="/">
+          SK BHATIA
         </Link>
-        {menuItems.map((item, index) => (
-          <Link key={index} className={classes.navLink} to={item}>
-            <Button size="medium" key={index}>
-              <Typography variant="h6" className={classes.buttonText}>
+      </div>
+      <div className="spacer" />
+      <div className=".Nav-container">
+        <ul className="Nav-links-container">
+          {props.menuItems.map((item, index) => (
+            <li className="Nav-link" key={index}>
+              <Link key={index} className="Nav-link" to={item}>
                 {item}
-              </Typography>
-            </Button>
-          </Link>
-        ))}
-      </Toolbar>
-    </AppBar>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
   );
 };

@@ -1,0 +1,24 @@
+.Toggle-button-container {
+  height: 24px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  justify-content: space-around;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  margin: 0 1rem;
+}
+
+.Toggle-line {
+  height: 2px;
+  width: 30px;
+  background: white;
+}
+
+@media (min-width: 768px) {
+  .Toggle-button-container {
+    display: none;
+  }
+}
